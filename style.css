@@ -15,14 +15,17 @@ body{
    
 }
 h2{
-    margin:20px;
+    background-color: white;
+    padding:20px;
+    border-radius: 20px;
+    margin: 20px;
 }
 .main{
     background-color: white;
     padding:20px;
     border-radius: 20px;
-    /* width:500px;
-    height: 700px; */
+    
+    height: 600px;
     margin: 20px;
 }
 .add{
@@ -30,6 +33,7 @@ h2{
     justify-content: center;
     align-items: center;
     margin: 10px;
+    height: 100px;
 }
 #input-field{
     width:100%;
@@ -43,12 +47,15 @@ button{
     border-radius: 5px;
     margin: 5px;
 }
-
+.list-container{
+    overflow-y: scroll;
+    height: 450px;
+}
 .list-field{
     display:flex ;
     align-items: center;
     justify-content: center;
-    padding:5px;
+    padding:10px;
     
 }
 #list-item{
