@@ -5,7 +5,7 @@ const list_container=document.querySelector(".list-container");
 add_btn.addEventListener('click',()=>{
     const val=input.value;
     if(input.value.trim().length==''){
-        alert("Field is empty");
+        alert("Field is empty :( Add some task");
         return
     }
     const list_field=document.createElement('div');
@@ -22,14 +22,26 @@ add_btn.addEventListener('click',()=>{
     edit_btn.id='edit-button';
     edit_btn.innerText='Edit';
     list_field.appendChild(edit_btn);
+
+    edit_btn.addEventListener('click',()=>{
+        input.value=list_item.innerText;
+        const parent=edit_btn.parentElement;
+        parent.parentElement.removeChild(parent);
+    });
     
     const del_btn=document.createElement('button');
     del_btn.id='delete-button';
     del_btn.innerText='Delete';
     list_field.appendChild(del_btn);
 
+    del_btn.addEventListener('click',()=>{
+        const parent=del_btn.parentElement;
+        parent.parentElement.removeChild(parent);
+    });
+
     list_item.addEventListener('dblclick',()=>{
           list_item.classList.add('line-through');
+          edit_btn.setAttribute('disabled','disabled');
     });
     input.value=" ";
     
