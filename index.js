@@ -51,3 +51,23 @@ input.addEventListener("keydown", function (e) {
     myFunction();
   }
 });
+
+function time() {
+  var date = new Date().toLocaleDateString();
+  var d = new Date();
+  var s=d.getSeconds();
+  var m = d.getMinutes();
+  var h = d.getHours();
+  if(s.toString().length===1){
+    var s="0"+s;
+  }
+  if(m.toString().length===1){
+    var m="0"+m;
+  }
+  if(h.toString().length===1){
+    var h="0"+h;
+  }
+  document.getElementById("date").innerText = date;
+  document.getElementById("time").innerText = h + ":" + m + ":" + s;
+}
+setInterval(time, 1000);
